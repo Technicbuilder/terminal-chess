@@ -17,6 +17,9 @@ class Pawn:
     def move(self, board):
         x, y = self.position
         self.available_locations = []
+
+        if not (0 <= y + self.direction <= 7):
+            return
         
         if 0 <= x + 1 <= 7:
             left_piece = board[y + self.direction][x + 1]
