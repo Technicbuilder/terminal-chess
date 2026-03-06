@@ -33,7 +33,7 @@ class Board:
         
         #   generate kings
         king_starting_positions = [(0, 4, True), (7, 4, False)]
-        self.assign_object(piece=Queen, attributes=king_starting_positions)
+        self.assign_object(piece=King, attributes=king_starting_positions)
         
         #   generate pawns
         for spaces in range(8):
