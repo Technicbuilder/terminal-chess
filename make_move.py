@@ -47,8 +47,8 @@ class Player:
             piece.start_pawn = False
             self.board.board[destination_y][destination_x] = piece
 
-            if self.end_of_board_pawn(piece=piece, destination_x=destination_x, destination_y=destination_y):
-                break
+            self.end_of_board_pawn(piece=piece, destination_x=destination_x, destination_y=destination_y)
+            break
 
     def convert_position_to_number(self, position):
         columns = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7}
@@ -97,7 +97,7 @@ class Player:
                     self.board.board[destination_y][destination_x] = Queen(starting_position=(destination_x, destination_y), colour=self.colour_bool)
                     temp_dict = {0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e', 5: 'f', 6: 'g', 7: 'h'}
                     print(f'Pawn promoted to queen at {temp_dict[destination_x]}{destination_y}')
-        return True
+        return False
 
     def capture(self, destination_y, destination_x):
             target = self.board.board[destination_y][destination_x]
